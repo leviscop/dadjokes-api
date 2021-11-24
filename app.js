@@ -5,9 +5,9 @@ let app = http.createServer((req, res) => {
     res.writeHead(200, {'Content-Type': 'text/plain'});
     fetch('https://icanhazdadjoke.com', {
         method: 'GET',
-        headers: { 'Accept': 'text/plain' }
-    }).then(res => res.text())
-    .then(text => res.end(text));
+        headers: { 'Accept': 'application/json' }
+    }).then(res => res.json())
+    .then(json => console.log(json.joke));
 });
 
 app.listen(80, '0.0.0.0');
