@@ -7,7 +7,7 @@ let app = http.createServer((req, res) => {
         method: 'GET',
         headers: { 'Accept': 'application/json' }
     }).then(res => res.json())
-    .then(json => console.log(json.joke));
+    .then(json => res.end(json.joke));
 });
 
 app.listen(80, '0.0.0.0');
