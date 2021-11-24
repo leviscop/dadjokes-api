@@ -1,7 +1,7 @@
 FROM node
 WORKDIR /usr/src/app
-COPY index.js /usr/src/app
+COPY app.js /usr/src/app
 RUN cd /usr/src/app \
     && npm init -y \
-    && npm install node-fetch@2.0
-CMD "npm" "start"
+    && npm install node-fetch
+CMD "node" "app.js"
